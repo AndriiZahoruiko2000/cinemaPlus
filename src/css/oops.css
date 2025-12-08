@@ -1,0 +1,28 @@
+.oops {
+  width: min(560px, 100% - 3rem);
+  margin: 5rem auto;
+  padding: 3rem;
+  border-radius: var(--radius-lg);
+  text-align: center;
+  background: rgba(15, 23, 42, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: var(--shadow-soft);
+}
+
+.oops-title {
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  margin-bottom: 1rem;
+}
+
+.oops-text {
+  color: var(--color-text-muted);
+  margin-bottom: 2rem;
+}
+
+.oops-btn {
+  padding: 0.9rem 2rem;
+  border-radius: 999px;
+  background: var(--gradient-accent);
+  color: #050505;
+  font-weight: 600;
+}

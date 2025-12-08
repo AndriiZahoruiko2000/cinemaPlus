@@ -1,0 +1,111 @@
+.weekly-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  gap: 1.5rem;
+}
+
+.weekly-cta {
+  padding: 0.75rem 1.75rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--color-text);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border: 1px solid var(--color-border);
+  transition: background var(--duration-quick) ease, transform var(--duration-quick) ease;
+}
+
+.weekly-cta:hover {
+  background: rgba(255, 255, 255, 0.16);
+  transform: translateY(-2px);
+}
+
+.weekly-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.75rem;
+}
+
+.weekly-card {
+  display: block;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  position: relative;
+  min-height: 340px;
+  background: var(--color-surface);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: var(--shadow-soft);
+}
+
+.weekly-poster {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.85);
+  transition: transform var(--duration-normal) ease, filter var(--duration-normal) ease;
+}
+
+.weekly-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.05) 0%,
+    rgba(255, 255, 255, 0.1) 45%,
+    rgba(255, 255, 255, 0.05) 100%
+  );
+  opacity: 0;
+  transition: opacity var(--duration-quick) ease;
+}
+
+.weekly-card:hover::after {
+  opacity: 1;
+}
+
+.weekly-card:hover .weekly-poster {
+  transform: scale(1.05);
+  filter: saturate(1);
+}
+
+.weekly-card div {
+  position: absolute;
+  left: 1.25rem;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  padding: 1rem 1.1rem;
+  border-radius: var(--radius-md);
+  background: rgba(5, 5, 10, 0.65);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4);
+}
+
+.weekly-card h4 {
+  margin: 0 0 0.35rem;
+  font-size: 1.05rem;
+}
+
+.weekly-card p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+}
+
+.weekly-card span {
+  color: #fff;
+  font-weight: 600;
+}
+
+@media (max-width: 600px) {
+  .weekly-head {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .weekly-cta {
+    align-self: stretch;
+    text-align: center;
+  }
+}

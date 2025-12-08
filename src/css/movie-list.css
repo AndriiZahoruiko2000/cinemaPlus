@@ -1,0 +1,114 @@
+.movie-list-form {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem 1.5rem;
+  border-radius: var(--radius-lg);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: var(--shadow-soft);
+  margin-bottom: 3rem;
+}
+
+.movie-search-input {
+  flex: 1;
+  padding: 0.85rem 1.1rem;
+  border-radius: var(--radius-sm);
+  background-color: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.movie-search-btn {
+  padding: 0.85rem 1.75rem;
+  border-radius: 999px;
+  background: var(--gradient-accent);
+  color: #050505;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
+
+.movie-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: 1.75rem;
+}
+
+.movie-list li {
+  list-style: none;
+}
+
+.movie-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1rem;
+  background: rgba(15, 23, 42, 0.9);
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: var(--shadow-soft);
+  overflow: hidden;
+}
+
+.movie-card::before {
+  content: attr(data-rating);
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  background: rgba(5, 5, 5, 0.4);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.movie-card img {
+  width: 100%;
+  border-radius: var(--radius-md);
+  object-fit: cover;
+}
+
+.movie-card h3 {
+  font-size: 1rem;
+  margin-top: 0.25rem;
+}
+
+.movie-card p {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+}
+
+.movie-list-pagination {
+  display: flex;
+  justify-content: center;
+  gap: 0.4rem;
+  margin-top: 3rem;
+}
+
+.movie-list-pagination button {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--color-text);
+  transition: background var(--duration-quick) ease, transform var(--duration-quick) ease;
+}
+
+.movie-list-pagination button:hover,
+.movie-list-pagination button[aria-current='true'] {
+  background: var(--gradient-accent);
+  color: #050505;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 640px) {
+  .movie-list-form {
+    flex-direction: column;
+  }
+
+  .movie-search-btn {
+    align-self: stretch;
+    text-align: center;
+  }
+}
