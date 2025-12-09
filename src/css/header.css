@@ -27,6 +27,7 @@
   border-radius: 14px;
   background: var(--gradient-accent);
   box-shadow: 0 10px 25px rgba(248, 54, 255, 0.35);
+  display: inline-block;
 }
 
 .logo-text {

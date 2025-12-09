@@ -1,6 +1,9 @@
-import { getGenres } from '../helpers/genres';
-import { getWeeklyMovies } from '../helpers/movies-api';
+import { getMovieById, getWeeklyMovies } from '../helpers/movies-api';
 import { refs } from '../helpers/refs';
+import { modalTemplate, moviesTemplate, updateModalBtn } from '../helpers/render-function';
+import { showModal } from './modal';
+
+//!================================================
 
 document.addEventListener('DOMContentLoaded', async e => {
   const movies = await getWeeklyMovies();
@@ -8,22 +11,19 @@ document.addEventListener('DOMContentLoaded', async e => {
   refs.weeklyList.innerHTML = markup;
 });
 
-function movieTemplate(movie) {
-  return ` <li class="weekly-item">
-      <a href="" class="weekly-card">
-        <img src="https://image.tmdb.org/t/p/original/${
-          movie.backdrop_path
-        }" alt="" class="weekly-poster" />
-        <div>
-        <h4>${movie.title}</h4>
-          <p><span>${getGenres(
-            movie.genre_ids
-          )}</span> | <span>${movie.release_date.slice(0, 4)}</span></p>
-        </div>
-      </a>
-    </li>`;
-}
+//!================================================
 
-function moviesTemplate(movies) {
-  return movies.map(movieTemplate).join('');
-}
+refs.weeklyList.addEventListener('click', async e => {
+  if (e.target === refs.weeklyList) {
+    return;
+  }
+  const liElement = e.target.closest('li');
+  const id = liElement.dataset.id;
+
+  const response = await getMovieById(id);
+
+  const markup = modalTemplate(response);
+  refs.modalContent.innerHTML = markup;
+  updateModalBtn(id);
+  showModal();
+});

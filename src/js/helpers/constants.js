@@ -1,0 +1,1 @@
+export const USER_MOVIE_LIST_KEY = 'USER_MOVIE_LIST_KEY';

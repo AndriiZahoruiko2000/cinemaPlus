@@ -1,12 +1,25 @@
 <section class="user-list section">
-  <select name="" id="" class="user-list-filter">
-    <option value=""></option>
-    <option value=""></option>
-    <option value=""></option>
-    <option value=""></option>
-    <option value=""></option>
-    <option value=""></option>
-  </select>
-  <ul class="user-list-grid"></ul>
-  <button class="user-list-btn"></button>
+  <div class="user-list-head">
+    <div>
+      <h2 class="section-title">My Library</h2>
+      <p class="text-muted">Track the films you've saved and filter them by genre.</p>
+    </div>
+    <div class="user-list-controls">
+      <label class="sr-only" for="user-list-filter">Filter by genre</label>
+      <select id="user-list-filter" class="user-list-filter js-user-list-filter">
+        <option value="all">All genres</option>
+      </select>
+      <button class="user-list-btn js-user-list-clear" type="button">Clear library</button>
+    </div>
+  </div>
+
+  <div class="user-list-empty js-user-list-empty" hidden>
+    <h3 class="user-list-empty-title">Library is empty</h3>
+    <p class="user-list-empty-text text-muted">
+      Start adding movies from the catalog to see them listed here.
+    </p>
+    <a class="btn user-list-empty-link" href="/catalog.html">Browse catalog</a>
+  </div>
+
+  <ul class="user-list-grid js-user-list-grid"></ul>
 </section>

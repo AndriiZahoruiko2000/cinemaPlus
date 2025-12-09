@@ -1,4 +1,4 @@
-const genres = [
+export const genres = [
   {
     id: 28,
     name: 'Action',
@@ -77,9 +77,17 @@ const genres = [
   },
 ];
 
-export function getGenres(genresIds) {
-  return genresIds.map(genresId => {
-    const genresItem = genres.find(item => item.id === genresId);
-    return genresItem.name;
-  });
+export function getGenres(genresIds = []) {
+  if (!Array.isArray(genresIds) || genresIds.length === 0) {
+    return 'Unknown';
+  }
+
+  const hasName = typeof genresIds[0] === 'object' && genresIds[0]?.name;
+  const names = hasName
+    ? genresIds.map(el => el.name).filter(Boolean)
+    : genresIds
+        .map(genresId => genres.find(item => item.id === genresId)?.name)
+        .filter(Boolean);
+
+  return names.length ? names.join(', ') : 'Unknown';
 }

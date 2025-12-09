@@ -5,4 +5,12 @@ export const refs = {
   searchMovieForm: document.querySelector('.js-movie-list-form'),
   movieList: document.querySelector('.js-movie-list'),
   movieListPagination: document.querySelector('.js-movie-list-pagination'),
+  modalBackdrop: document.querySelector('.backdrop'),
+  modalContent: document.querySelector('.js-modal-content'),
+  modalClose: document.querySelector('.js-modal-close'),
+  userList: document.querySelector('.js-user-list-grid'),
+  userListFilter: document.querySelector('.js-user-list-filter'),
+  userListClear: document.querySelector('.js-user-list-clear'),
+  userListEmpty: document.querySelector('.js-user-list-empty'),
+  userListEmptyLink: document.querySelector('.user-list-empty-link'),
 };
