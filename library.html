@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Document</title>
+    <script type="module" crossorigin src="/goit-js-hw-11/library.js"></script>
+    <link rel="modulepreload" crossorigin href="/goit-js-hw-11/assets/vendor-DXMRcI7q.js">
+    <link rel="modulepreload" crossorigin href="/goit-js-hw-11/assets/footer-C5-vchM5.js">
+    <link rel="stylesheet" crossorigin href="/goit-js-hw-11/assets/vendor-BIHqh4r3.css">
+    <link rel="stylesheet" crossorigin href="/goit-js-hw-11/assets/footer-BEluLVvr.css">
+  </head>
+  <body>
+    <header class="header">
+  <a href="/index.html" class="logo">
+    <span class="logo-icon" aria-hidden="true"></span>
+    <p class="logo-text">Cinemania</p>
+  </a>
+
+  <nav class="header-nav">
+    <ul class="header-menu">
+      <li class="header-menu-item">
+        <a href="/index.html" class="header-menu-link">Home</a>
+      </li>
+      <li class="header-menu-item">
+        <a href="/catalog.html" class="header-menu-link">Catalog</a>
+      </li>
+      <li class="header-menu-item">
+        <a href="/library.html" class="header-menu-link">My library</a>
+      </li>
+    </ul>
+  </nav>
+  <input type="checkbox" class="theme-toggle" />
+</header>
+
+    <section class="hero js-hero">
+  <h1 class="hero-title">Let’s Make Your Own Cinema</h1>
+  <p class="hero-text">
+    Is a guide to creating a personalized movie theater experience. You'll need
+    a projector, screen, and speakers. Decorate your space, choose your films,
+    and stock up on snacks for the full experience.
+  </p>
+  <a href="" class="hero-link">Get Started</a>
+</section>
+
+
+    <main>
+      <section class="user-list section">
+  <div class="user-list-head">
+    <div>
+      <h2 class="section-title">My Library</h2>
+      <p class="text-muted">Track the films you've saved and filter them by genre.</p>
+    </div>
+    <div class="user-list-controls">
+      <label class="sr-only" for="user-list-filter">Filter by genre</label>
+      <select id="user-list-filter" class="user-list-filter js-user-list-filter">
+        <option value="all">All genres</option>
+      </select>
+      <button class="user-list-btn js-user-list-clear" type="button">Clear library</button>
+    </div>
+  </div>
+
+  <div class="user-list-empty js-user-list-empty" hidden>
+    <h3 class="user-list-empty-title">Library is empty</h3>
+    <p class="user-list-empty-text text-muted">
+      Start adding movies from the catalog to see them listed here.
+    </p>
+    <a class="btn user-list-empty-link" href="/catalog.html">Browse catalog</a>
+  </div>
+
+  <ul class="user-list-grid js-user-list-grid"></ul>
+</section>
+
+    </main>
+
+    <footer class="footer">
+  <div class="footer-inner">
+    <p class="footer-copy">
+      © <span class="js-footer-year"></span> Cinemania. Crafted with &hearts; for movie lovers.
+    </p>
+    <div class="footer-links">
+      <a href="/index.html">Home</a>
+      <a href="/catalog.html">Catalog</a>
+      <a href="/library.html">Library</a>
+    </div>
+    <div class="social-links">
+      <a href="https://instagram.com" target="_blank" rel="noreferrer noopener" aria-label="Instagram">IG</a>
+      <a href="https://twitter.com" target="_blank" rel="noreferrer noopener" aria-label="Twitter">TW</a>
+      <a href="https://youtube.com" target="_blank" rel="noreferrer noopener" aria-label="YouTube">YT</a>
+    </div>
+  </div>
+</footer>
+
+    <div class="backdrop hidden">
+  <div class="modal">
+    <button class="modal-close js-modal-close" type="button" aria-label="Закрити вікно">
+      <span class="modal-close-icon"></span>
+    </button>
+    <div class="modal-content js-modal-content"></div>
+  </div>
+</div>
+
+  </body>
+</html>

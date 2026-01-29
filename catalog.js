@@ -1,0 +1,5 @@
+import{r as s,h as l,i as r,k as c,f as d,m as u,u as v,s as g}from"./assets/footer-C5-vchM5.js";import{P as L}from"./assets/vendor-DXMRcI7q.js";const m=new L(s.movieListPagination,{itemsPerPage:20,totalItems:0});//!================================================
+let i,o;document.addEventListener("DOMContentLoaded",async t=>{i=1;const a=await l(),e=r(a.results);s.movieList.innerHTML=e,a.total_pages,m.reset(a.total_results)});m.on("afterMove",async t=>{const a=t.page;let e;o?e=await c(o,a):e=await l(a);const n=r(e.results);s.movieList.innerHTML=n});//!================================================
+s.searchMovieForm.addEventListener("submit",async t=>{t.preventDefault(),i=1,o=new FormData(t.target).get("movie");const e=await c(o,i),n=r(e.results);s.movieList.innerHTML=n,m.reset(e.total_pages)});//!================================================
+s.movieList.addEventListener("click",async t=>{if(t.target===s.movieList)return;const e=t.target.closest("li").dataset.id,n=await d(e),p=u(n);s.modalContent.innerHTML=p,v(e),g()});//!================================================
+//# sourceMappingURL=catalog.js.map
